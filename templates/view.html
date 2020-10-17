@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Notes
+{% endblock %}
+
+{% block content%}
+
+<br> 
+<h3> 
+    Here are the links for this Subject's Notes
+</h3>
+<br>
+{% for friends in friend %}
+    
+        <a href="{{ friends.link }}" target="_blank">
+            <h4>
+                {{ friends.chapter }}  <a href="/update/{{friends.id}}" class="btn btn-outline-secondary btn-sm"> Edit </a>    
+                
+            </h4>
+        </a>
+
+{% endfor %}
+
+{% endblock %}

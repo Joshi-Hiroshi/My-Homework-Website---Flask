@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Small Attempt to reduce the Burden on a few people. Made using HTML/CSS/JS and Flask Framework ">
+    <title>
+
+      {% block title %}
+        
+      {% endblock %}
+    </title>
+    <!--
+        {%if title%}
+            {{title}}
+        {%else%}
+            Vishnu Joshi
+        {% endif %}
+      -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="icon" href="https://lh3.googleusercontent.com/-DQibjDy_33k/X3ml6LxiWFI/AAAAAAAADrs/TqB4iA7hUKEDFBOx69eXj48MMiS7LKOegCK8BGAsYHg/s0/2020-10-04.png">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!--<nav class="navbar navbar-dark bg-primary">-->
+    <!--<nav class="navbar navbar-light" style="background-color: #e3f2fd;"-->
+        <a class="navbar-brand" href="{{url_for('index')}}">LetsNotFail</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('subjects')}}">Subjects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('upload')}}">Upload Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('support')}}">Support Me </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="container">
+<br>
+        {%block content%}
+
+        {%endblock%}
+    </div>
+   
+
+    
+<footer class="page-footer font-small special-color-dark pt-4" id="footer" style="position: relative;
+bottom: 1%;
+width: 100%;
+ ">
+
+  <div class="footer-copyright text-center py-3">© 2020 Copyright :
+    <a href="/"> I'm Not a Notes Machine</a>
+  </div>
+  
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

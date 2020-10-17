@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+{% if all_fields_needed_msg %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ all_fields_needed_msg }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% endif %}
+
+<h1 style="text-align: center;">
+    Welcome !
+</h1>
+<br>
+<br>
+<br>
+<br>
+
+ 
+<div class="card text-center">
+  <div class="card-header">
+    Today's Homework
+  </div>
+
+  <div class="card-body" name ='first_item'>
+    <br>
+    <form action="{{url_for('homework')}}" METHOD ='POST'>
+      <input type="text" placeholder='Homework', name='name'>
+      <input type="submit" value="Add Homework" class="btn btn-secondary">
+    </form>
+<br>
+  {% for datas in data %}
+    <p class="card-text">{{ datas.hw }}
+
+      <a href="/updates/{{datas.id}}" class="btn btn-outline-secondary btn-sm"> Edit </a>    
+        <a href="/delete/{{datas.id}}" class="btn btn-outline-danger btn-sm"> Delete </a>         
+
+    </p>
+  {% endfor %}  
+  <br>
+  <a href="/upload" class="btn btn-primary">Contribute</a>
+  <br>
+  <br>
+  <div class="card-footer text-muted">
+    {{time}}
+    
+  </div>
+  
+</div>
+
+</div>
+
+{% endblock %}

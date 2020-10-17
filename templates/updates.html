@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update Friend
+{% endblock %}
+
+{% block content%}
+
+<div class="container">
+<h1>Friends</h1>
+<br>
+
+
+<form action="/updates/{{editing_data.id}}" METHOD ='POST'>
+    <div class="form-group">
+    <input type="text" placeholder='Homework', name='name' value="{{editing_data.hw}}" >
+    </div>
+    
+    <input type="submit" value="Update name" class="btn btn-secondary">
+</form>
+
+<br> <br>
+
+{% for friends in friend %}
+    <h4>
+        {{ friends.hw }}  <a href="/update/{{friends.id}}" class="btn btn-outline-secondary btn-sm"> Update </a>
+    </h4>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

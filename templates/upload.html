@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Upload
+{% endblock %}
+
+{% block content %}
+
+
+{% if all_fields_msg%}
+ 
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{all_fields_msg}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  
+{% endif%}
+
+
+<br>
+<h1 style="padding-top: 2%;text-align: center;">Upload Notes and help Others !</h1>
+    
+<br> <br>
+
+<form action="{{url_for('form')}}" method="POST">
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" name="person_name" value="{{name}}">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Chapter Name/ Title " name="chapter_name" value="{{name}}">
+  </div>
+
+  <div class="form-group">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Google Drive File Link" name="entered_link" value="{{link}}">
+  </div>
+  <div class="form-group">
+   
+        <select class="form-control" id="exampleFormControlSelect1" name='subject' placeholder='Subject'>
+        <option> </option>    
+        <option>Geography</option>
+        <option>History</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Biology</option>
+        <option>OTHERS</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" name="enter_email" value="{{email}}"> 
+    </div>
+  <br>
+
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+</div>
+
+
+{% endblock %}
